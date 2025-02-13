@@ -1,0 +1,215 @@
+.principal{
+    display: flex;
+    flex-direction: column;
+
+    
+    
+    margin: 5rem auto 5rem auto;
+
+    width: 25rem;
+    height: 70vh;
+    
+    background:var(--cor-principal-bg);
+    border-radius: 20px;
+
+    padding: 1em 1em;
+
+    gap: 6rem;
+    
+}
+
+
+/* FORMULARIO */
+
+.principal__form{
+
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    
+}
+
+.principal__form label{
+    font-size: 1.25rem;
+    margin-bottom: .5em;
+}
+
+.principal__form label:first-child{
+    margin-top: 3em;
+}
+
+.principal__form select, .principal__form input {
+    margin-bottom: 1em;
+    color: var(--cor-select-texto);
+    padding: 2em;
+    margin-bottom: 2.5em;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+.principal__form button {
+    margin-top: 1em;
+    background: var(--cor-button-bg);
+    color: var(--cor-button-texto);
+    font-weight: bold;
+    border: none;
+    padding: 1em 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-size: 1.5rem;
+}
+
+
+/* ANIMAÇÃO DE CONVERSÃO */
+
+.principal__animacao{
+    
+    height: 30%;
+    width: 100%;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    border: 1px solid #772FD3;
+    border-radius: 20px;
+    padding: 1.5em 0;
+    
+   
+}
+
+.conversao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.conversao h2{
+    font-size: 1.25rem;
+    font-weight: 400;
+
+}
+
+.conversao p {
+    font-size: 1.75rem;
+}
+
+.conversao img {
+    min-width: 4rem;
+}
+
+
+
+/* //////////////////////////////////////////////// */
+
+
+
+
+
+/* MEDIA QUERIES */
+
+
+
+
+@media screen and (max-width:460px){
+    
+    body {
+        background-color: var(--cor-principal-bg);
+    }
+
+    .body__gif{
+        display: none;
+    }
+
+    .principal{
+
+        height: 100vh;
+        
+        margin: 0;
+        gap: 1em;
+        
+
+    }
+
+    /* FORMULARIO */
+
+    .principal__form{
+        width: 90%;
+    }
+
+    .principal__form label{
+        font-size: 0.75rem;
+        margin-bottom: .5em;
+    }
+    
+    .principal__form label:first-child{
+        margin-top: 1.5em;
+    }
+
+    .principal__form select, .principal__form input {
+        margin-bottom: 1em;
+        
+        color: var(--cor-select-texto);
+        padding: 1em;
+        margin-bottom: 1em;
+        font-size: .5rem;
+        font-weight: bold;
+    
+    }
+
+    .principal__form button {
+        margin-top: 1em;
+        background: var(--cor-button-bg);
+        color: var(--cor-button-texto);
+        font-weight: bold;
+        border: none;
+        padding: 1em 0;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        font-size: .75rem;
+    }
+
+
+          
+         /* ANIMACAO */
+
+
+    .principal__animacao{
+    
+        height: 30%;
+        width: 90%;
+        margin-top: 0;
+        
+        gap: 1em;
+        padding: 1em 0;
+        
+    }
+
+
+    .conversao h2{
+        font-size: .75rem;
+        font-weight: 400;
+    
+    }
+    
+    .conversao p {
+        font-size: 1rem;
+    }
+    
+    .conversao img {
+        min-width: 4rem;
+    }
+    
+    .conversao img {
+        min-width: 1.5rem;
+    }
+}
+    
+    
+
+   

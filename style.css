@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("./assets/styles/principal.css");
+:root{
+    /* BODY */
+
+    --cor-body-bg:  #8A51FC;
+    --fonte-body: "Roboto", serif;
+    --cor-body-texto: #555555;
+
+    /* PRINCIPAL */
+    
+    --cor-principal-bg: #F4F4F4;
+
+    /* FORMULARIO */
+    -cor-select-texto: #BBBBBB;
+
+    --cor-button-bg: #772FD3;
+    --cor-button-texto: #FFFFFF;
+
+     /* ANIMAÇÃO    */
+    --cor-animacao-borda: #772FD3;
+    
+    
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    display: flex;
+    background-color: var(--cor-body-bg);
+    flex-direction: column;
+    color: var(--cor-body-texto);
+    height: 100vh;
+}
+
+.body__gif {
+    height: 25%;
+    max-width: 23rem;
+    margin: 2rem auto 2rem auto;
+}
