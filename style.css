@@ -39,7 +39,7 @@ body {
 }
 
 .body__gif {
-    height: 25%;
-    max-width: 23rem;
-    margin: 2rem auto 2rem auto;
+    height: 15%;
+    min-width: 15rem;
+    margin: 2rem auto 1rem auto;
 }
