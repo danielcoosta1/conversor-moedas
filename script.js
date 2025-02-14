@@ -1,7 +1,8 @@
 const convertButton = document.querySelector(".principal__button");
-const converterDe = document.querySelector("converterDe");
-const converterPara = document.querySelector("converterPara");
-
+const converterDe = document.querySelector("#converterDe");
+const converterPara = document.querySelector("#converterPara");
+const imagemConvertida = document.querySelector(".img__convertida");
+const tituloConvertido = document.querySelector(".titulo__convertido");
 
 function convertValues(){
     const dolarToday = 5.9;
@@ -10,8 +11,6 @@ function convertValues(){
     const valorDepois = document.querySelector(".valor-convertido");
     const inputValor = document.getElementById("valor").value;
     
-
-
     if(converterPara.value == "dolar"){
         valorDepois.innerHTML = new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -21,10 +20,10 @@ function convertValues(){
    
     if(converterPara.value == "euro"){
    
-        valorAntes.innerHTML = new Intl.NumberFormat('de-DE', {
+        valorDepois.innerHTML = new Intl.NumberFormat('de-DE', {
             style: 'currency',
             currency: 'EUR'
-        }).format(inputValor/euroToday);
+        }).format(inputValor / euroToday);
     }
     
 
@@ -34,10 +33,25 @@ function convertValues(){
     }).format(inputValor);
     
 
-   
 }
 
 
+function changeOptions(){
+    
+    if(converterPara.value == "dolar"){
+        tituloConvertido.innerHTML = "Dólar Americano";
+        imagemConvertida.src = "./assets/img/estados-unidos (1) 1.png";
+        convertValues();
+    }
+    if(converterPara.value == "euro"){
+        tituloConvertido.innerHTML = "Euro";
+        imagemConvertida.src = "./assets/img/euro.png"
+        convertValues();
+    }
+
+}
+
+converterPara.addEventListener("change", changeOptions);
 convertButton.addEventListener("click", convertValues);
 
 
