@@ -1,4 +1,4 @@
-<h1>Conversor de moedas</h1>
+<h1>Conversor de moedas :dollar::dollar:  </h1>
 <p>Projeto ficticio da plataforma DevClub</p>
 
 
