@@ -1,24 +1,31 @@
-let cotacoes = [];
-getData();
+// let cotacoes = [];
+// getData();
 
-async function getData() {
-    const url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL";
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
+// async function getData() {
+//     const url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL";
+//     try {
+//       const response = await fetch(url);
+//       if (!response.ok) {
+//         throw new Error(`Response status: ${response.status}`);
+//       }
   
-      cotacoes = await response.json();
-    //   console.log(cotacoes)
+//       cotacoes = await response.json();
+//     //   console.log(cotacoes)
       
-    } catch (error) {
-      console.error(error.message);
-    }
+//     } catch (error) {
+//       console.error(error.message);
+//     }
 
-  }
+//   }
 
-const converterValores = ()=>{
+const converterValores = async ()=>{
+
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json()).catch((error)=>{
+      console.error(error)
+    });
+
+    const cotacoes = data
+
 
     const dolarToday  = cotacoes.USDBRL.bid;
     const euroToday = cotacoes.EURBRL.bid;
