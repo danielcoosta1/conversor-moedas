@@ -4,9 +4,36 @@ const converterPara = document.querySelector("#converterPara");
 const imagemConvertida = document.querySelector(".img__convertida");
 const tituloConvertido = document.querySelector(".titulo__convertido");
 
-function convertValues(){
-    const dolarToday = 5.9;
-    const euroToday = 6.8;
+let cotacoes = [];
+getData();
+
+async function getData() {
+    const url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL";
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      cotacoes = await response.json();
+    //   console.log(cotacoes)
+      
+    } catch (error) {
+      console.error(error.message);
+    }
+
+  }
+
+
+
+convertButton.addEventListener("click", async ()=>{
+   
+    const dolarToday  = cotacoes.USDBRL.bid;
+    const euroToday = cotacoes.EURBRL.bid;
+
+    console.log(euroToday);
+    console.log(dolarToday);
+    
     const valorAntes = document.querySelector(".valor-para-converter");
     const valorDepois = document.querySelector(".valor-convertido");
     const inputValor = document.getElementById("valor").value;
@@ -31,29 +58,42 @@ function convertValues(){
         style: 'currency',
         currency: 'BRL'
     }).format(inputValor);
+
+
+});
+
+
+
+converterPara.addEventListener("change", async ()=>{
+
     
+    const valorDepois = document.querySelector(".valor-convertido");
+    const inputValor = document.getElementById("valor").value;
 
-}
+    const dolarToday  = cotacoes.USDBRL.bid;
+    const euroToday = cotacoes.EURBRL.bid;
 
+    console.log(euroToday);
+    console.log(dolarToday);
 
-function changeOptions(){
-    
     if(converterPara.value == "dolar"){
         tituloConvertido.innerHTML = "Dólar Americano";
         imagemConvertida.src = "./assets/img/estados-unidos (1) 1.png";
-        convertValues();
+        valorDepois.innerHTML = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(inputValor / dolarToday);
+
+
+        
     }
     if(converterPara.value == "euro"){
         tituloConvertido.innerHTML = "Euro";
-        imagemConvertida.src = "./assets/img/euro.png"
-        convertValues();
+        imagemConvertida.src = "./assets/img/euro.png";
+        valorDepois.innerHTML = new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR'
+        }).format(inputValor / euroToday);
+        
     }
-
-}
-
-converterPara.addEventListener("change", changeOptions);
-convertButton.addEventListener("click", convertValues);
-
-
-
-
+});
