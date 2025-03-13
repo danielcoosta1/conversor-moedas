@@ -1,9 +1,3 @@
-const convertButton = document.querySelector(".principal__button");
-const converterDe = document.querySelector("#converterDe");
-const converterPara = document.querySelector("#converterPara");
-const imagemConvertida = document.querySelector(".img__convertida");
-const tituloConvertido = document.querySelector(".titulo__convertido");
-
 let cotacoes = [];
 getData();
 
@@ -57,22 +51,4 @@ const converterValores = ()=>{
     }).format(inputValor);
 }
 
-convertButton.addEventListener("click", converterValores);
-
-const  changeOptions = ()=>{
-    
-    if(converterPara.value == "dolar"){
-        tituloConvertido.innerHTML = "Dólar Americano";
-        imagemConvertida.src = "./assets/img/estados-unidos (1) 1.png";
-        converterValores();
-  
-    }
-    if(converterPara.value == "euro"){
-        tituloConvertido.innerHTML = "Euro";
-        imagemConvertida.src = "./assets/img/euro.png";
-        converterValores();
-    }
-}
-
-
-converterPara.addEventListener("change", changeOptions);
+export default converterValores
