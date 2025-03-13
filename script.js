@@ -24,16 +24,13 @@ async function getData() {
 
   }
 
+const converterValores = ()=>{
 
-
-convertButton.addEventListener("click", async ()=>{
-   
     const dolarToday  = cotacoes.USDBRL.bid;
     const euroToday = cotacoes.EURBRL.bid;
 
-    console.log(euroToday);
-    console.log(dolarToday);
-    
+    // console.log(euroToday);
+    // console.log(dolarToday);
     const valorAntes = document.querySelector(".valor-para-converter");
     const valorDepois = document.querySelector(".valor-convertido");
     const inputValor = document.getElementById("valor").value;
@@ -58,42 +55,24 @@ convertButton.addEventListener("click", async ()=>{
         style: 'currency',
         currency: 'BRL'
     }).format(inputValor);
+}
 
+convertButton.addEventListener("click", converterValores);
 
-});
-
-
-
-converterPara.addEventListener("change", async ()=>{
-
+const  changeOptions = ()=>{
     
-    const valorDepois = document.querySelector(".valor-convertido");
-    const inputValor = document.getElementById("valor").value;
-
-    const dolarToday  = cotacoes.USDBRL.bid;
-    const euroToday = cotacoes.EURBRL.bid;
-
-    console.log(euroToday);
-    console.log(dolarToday);
-
     if(converterPara.value == "dolar"){
         tituloConvertido.innerHTML = "Dólar Americano";
         imagemConvertida.src = "./assets/img/estados-unidos (1) 1.png";
-        valorDepois.innerHTML = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD'
-        }).format(inputValor / dolarToday);
-
-
-        
+        converterValores();
+  
     }
     if(converterPara.value == "euro"){
         tituloConvertido.innerHTML = "Euro";
         imagemConvertida.src = "./assets/img/euro.png";
-        valorDepois.innerHTML = new Intl.NumberFormat('de-DE', {
-            style: 'currency',
-            currency: 'EUR'
-        }).format(inputValor / euroToday);
-        
+        converterValores();
     }
-});
+}
+
+
+converterPara.addEventListener("change", changeOptions);
