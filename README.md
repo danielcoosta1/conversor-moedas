@@ -1,6 +1,6 @@
 <h1>Projeto DevClub - Conversor de moedas</h1>
 <p>Projeto ficticio da plataforma DevClub</p>
-<p>Conhecimentos usados: HTML e Css e JavaScrip</p>
+<p>Conhecimentos usados: HTML e Css e JavaScript</p>
 
 <p>Responsividade para Desktop e Mobile </p>
 
