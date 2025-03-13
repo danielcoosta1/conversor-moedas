@@ -24,11 +24,8 @@ const converterValores = async ()=>{
       console.error(error)
     });
 
-    const cotacoes = data
-
-
-    const dolarToday  = cotacoes.USDBRL.bid;
-    const euroToday = cotacoes.EURBRL.bid;
+    const dolarToday  = data.USDBRL.bid;
+    const euroToday = data.EURBRL.bid;
 
     // console.log(euroToday);
     // console.log(dolarToday);
